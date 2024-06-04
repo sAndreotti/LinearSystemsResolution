@@ -54,24 +54,22 @@ def jacobi(A, b, x0, tol, max_iter):
     """
 
     # Dimensione del sistema
+    n = A.shape[0]
     x = x0.copy()
     P = diagonalize_sparse_matrix(A)
 
     for it in range(max_iter):
 
         # Aggiornamento X
-        #for i in range(n):
-        r = A*x - b
-        x = x + P * r
-
-            ######################
+        for i in range(n):
             # Prendo il valore della diagonale
-            #d = A[i, i]
-            #r = b[i] - sum(A[i, :i] * x[:i]) - sum(A[i, i+1:] * x[i+1:])
-            #x[i] = r / d
+            d = A[i, i]
+            #r = b - (A*x)
+            r = b[i] - sum(A[i, :i] * x[:i]) - sum(A[i, i+1:] * x[i+1:])
+            x[i] = r / d
 
         # Controlla la convergenza
-        if (np.linalg.norm(r))/np.linalg.norm(b) < tol:
+        if (np.linalg.norm(A*x - b))/np.linalg.norm(b) < tol:
             print(f"Convergenza a {it} iterazioni")
             break
 
