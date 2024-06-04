@@ -46,6 +46,7 @@ class Solver(ABC):
 class JacobiSolver(Solver): 
 
     def initialize_method(self):
+        print("Metodo di Jacobi")
         return np.zeros(self.A.shape[0], dtype=np.float64)
 
     # Controlla la convergenza
@@ -83,6 +84,7 @@ class GaussSeiderSolver(Solver):
         return x
 
     def initialize_method(self):
+        print("Metodo di Gauss-Seider")
         self.P = sp.sparse.tril(self.A).tocsr()
         self.y = np.zeros(self.P.shape[0]) 
         return np.zeros(self.A.shape[0], dtype=np.float64)
@@ -106,6 +108,7 @@ class GaussSeiderSolver(Solver):
 class GradientSolver(Solver): 
 
     def initialize_method(self):
+        print("Metodo del Gradiente")
         return np.zeros(self.A.shape[0], dtype=np.float64)
 
     # Controlla la convergenza
@@ -130,6 +133,7 @@ class GradientSolver(Solver):
 class GradientConjugateSolver(Solver): 
 
     def initialize_method(self):
+        print("Metodo del Gradiente Coniugato")
         self.first = True
         return np.zeros(self.A.shape[0], dtype=np.float64)
     
