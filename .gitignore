@@ -1,1 +1,5 @@
 progetto1bis.cpp
+
+*.cpy
+__pycache__/
+__pycache__/*
