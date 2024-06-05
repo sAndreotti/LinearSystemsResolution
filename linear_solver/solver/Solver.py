@@ -14,11 +14,11 @@ class Solver(ABC):
         Constructor of the class Solver.
 
         Parameters:
-        @tol: float -> Tolerance of the solver.
-        @max_iter: int -> Maximum number of iterations.
-        @initialization_mode: Util.InitializationMode -> Initialization mode of the solver.
-        @lower_bound: float -> Lower bound of the initialization (if necessary).
-        @upper_bound: float -> Upper bound of the initialization (if necessary).
+        @param tol: float -> Tolerance of the solver.
+        @param max_iter: int -> Maximum number of iterations.
+        @param initialization_mode: Util.InitializationMode -> Initialization mode of the solver.
+        @param lower_bound: float -> Lower bound of the initialization (if necessary).
+        @param upper_bound: float -> Upper bound of the initialization (if necessary).
         '''
         
         self.tol = tol

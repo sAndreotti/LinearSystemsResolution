@@ -36,11 +36,10 @@ class ConjugateGradientSolver(Solver):
         Solve the system of equations Ax = b using the Conjugate Gradient method.
         
         Parameters:
-        @A: sp.sparse.csr_matrix -> Matrix of the system.
-        @b: np.ndarray -> Known terms vector of the system.
+        @param A: sp.sparse.csr_matrix -> Matrix of the system.
+        @param b: np.ndarray -> Known terms vector of the system.
         
-        Return:
-        @x: np.ndarray -> Solution of the system.
+        @return x: np.ndarray -> Solution of the system.
         '''
 
         x_0 = super()._initialize_x_0(A.shape[1])

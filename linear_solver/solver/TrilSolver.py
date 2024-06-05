@@ -14,7 +14,7 @@ class TrilSolver():
         Constructor of the class TrilSolver.
 
         Parameters:
-        @A: sp.sparse.csr_matrix -> Lower triangular matrix.
+        @param A: sp.sparse.csr_matrix -> Lower triangular matrix.
         '''
         self.mode = mode
 
@@ -23,11 +23,10 @@ class TrilSolver():
         Function to resolve the lower triangular system Lx = b using the forward substitution.
 
         Parameters:
-        @L: sp.sparse.csr_matrix -> Lower triangular matrix.
-        @b: np.array -> Vector b.
+        @param L: sp.sparse.csr_matrix -> Lower triangular matrix.
+        @param b: np.array -> Vector b.
 
-        Returns:
-        @x: np.array -> Solution of the system.
+        @return x: np.array -> Solution of the system.
         '''
         if self.mode == ForwardSubstitutionMode.NAIVE:
             return self._forward_substitution_naive(L, b)
