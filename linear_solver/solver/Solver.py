@@ -42,7 +42,7 @@ class Solver(ABC):
         return np.linalg.norm(r) / np.linalg.norm(b) < self.tol
 
     @abstractmethod
-    def _update_x(self, A, b, x, support:any=None) -> tuple[np.ndarray, np.array, any]:
+    def _update_x(self, A, b, x, support:any=None) -> tuple[np.ndarray, np.ndarray, any]:
         pass
     
     def solve(self, A:sp.sparse.csr_matrix, b:np.ndarray, support:any=None) -> np.ndarray:
