@@ -45,3 +45,5 @@ List of all the **dependecies** to use the library (can be installed with <code>
 - [numpy](https://numpy.org/): Linear algebra for python;
 - [scipy](https://scipy.org/): Sparse matrix algebra;
 
+To install all the dependencies run:
+<code>pip install -r requirements.txt</code>
